@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import beanieService from './services/beanies'
 import gloveService from './services/gloves'
 import facemaskService from './services/facemasks'
+import ProductList from './components/ProductList'
 
 const App = () => {
   const [beanies, setBeanies] = useState([])
@@ -28,18 +29,9 @@ const App = () => {
 
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-      <div style={{ padding: 10 }}>
-        <p>beanies</p>
-        {beanies.map(beanie => <p key={beanie.id}>{beanie.name}</p>)}
-      </div>
-      <div style={{ padding: 10 }}>
-        <p>facemasks</p>
-        {facemasks.map(facemask => <p key={facemask.id}>{facemask.name}</p>)}
-      </div>
-      <div style={{ padding: 10 }}>
-        <p>gloves</p>
-        {gloves.map(glove => <p key={glove.id}>{glove.name}</p>)}
-      </div>
+        <ProductList products={beanies} category={"Beanies"}/>
+        <ProductList products={facemasks} category={"Facemasks"}/>
+        <ProductList products={gloves} category={"Gloves"}/>
     </div>
   );
 }
