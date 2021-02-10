@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import beanieService from './services/beanies'
-import gloveService from './services/gloves'
-import facemaskService from './services/facemasks'
+import productService from './services/products'
 import ProductList from './components/ProductList'
+import beanieIcon from './assets/beanieIcon.png'
 
 const App = () => {
   const [beanies, setBeanies] = useState([])
@@ -10,28 +9,38 @@ const App = () => {
   const [facemasks, setFacemasks] = useState([])
 
   useEffect(() => {
-    beanieService.getAll().then(beanies => {
+    productService.getBeanies().then(beanies => {
       setBeanies(beanies)
     })
   }, [])
 
   useEffect(() => {
-    gloveService.getAll().then(gloves => {
+    productService.getGloves().then(gloves => {
       setGloves(gloves)
     })
   }, [])
 
   useEffect(() => {
-    facemaskService.getAll().then(facemasks => {
+    productService.getFacemasks().then(facemasks => {
       setFacemasks(facemasks)
     })
   }, [])
 
+  let manufacturers = new Set()
+
+  facemasks.forEach(beanie => manufacturers.add(beanie.manufacturer))
+
+  console.log(manufacturers)
+
+  const frontPageBeanies = beanies.slice(0,4)
+  const frontPageFacemasks = facemasks.slice(0,4)
+  const frontPageGloves = gloves.slice(0,4)
+
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-        <ProductList products={beanies} category={"Beanies"}/>
-        <ProductList products={facemasks} category={"Facemasks"}/>
-        <ProductList products={gloves} category={"Gloves"}/>
+        <ProductList products={frontPageBeanies} category={"Beanies"} icon={beanieIcon}/>
+        <ProductList products={frontPageFacemasks} category={"Facemasks"}/>
+        <ProductList products={frontPageGloves} category={"Gloves"}/>
     </div>
   );
 }

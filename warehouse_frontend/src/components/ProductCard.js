@@ -10,7 +10,8 @@ import Badge from '@material-ui/core/Badge';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        minWidth: 275,
+        width: 275,
+        padding: 10
     },
     title: {
         fontSize: 14,
@@ -18,14 +19,20 @@ const useStyles = makeStyles((theme) => ({
     pos: {
         marginBottom: 12,
     },
-    chip: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
+    footer: {
+        justifyContent: 'space-between',
         '& > *': {
             margin: theme.spacing(0.5),
         },
+    },
+    circleContainer: {
+        display: 'flex',
+        justifyContent: 'left',
+        '& > *': {
+            margin: theme.spacing(0.5),
+        }
     }
+
 }))
 
 const Circle = ({ color }) => {
@@ -70,10 +77,12 @@ const ProductCard = (props) => {
                         {props.product.manufacturer}
                     </Typography>
                 </CardContent>
-                <CardActions className={classes.chip}>
+                <CardActions className={classes.footer}>
+                    <div className={classes.circleContainer}>
                     {props.product.color.map((color) => (
                         <Circle color={color} key={color} />
                     ))}
+                    </div>
                     <Chip label={props.product.price + ' €'} />
                 </CardActions>
             </Card>
