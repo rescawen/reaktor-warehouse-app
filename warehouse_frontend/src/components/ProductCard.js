@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -6,6 +6,7 @@ import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Badge from '@material-ui/core/Badge';
+import manufacturerService from '../services/manufacturers'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -63,12 +64,18 @@ const Circle = ({ color }) => {
 const ProductCard = (props) => {
     const classes = useStyles()
 
+    useEffect(() => {
+        manufacturerService.getAvailablility( props.product.manufacturer, props.product.id.toUpperCase()).then(availability => {
+          console.log(availability)
+        })
+      }, []) 
+
     return (
         <div className={classes.root}>
             <Card key={props.product.id}>
                 <CardContent>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        {props.product.id}
+                        {props.product.id.toUpperCase()}
                     </Typography>
                     <Typography variant="h5" component="h2">
                         {props.product.name}

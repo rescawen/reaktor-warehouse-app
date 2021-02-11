@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import productService from './services/products'
 import ProductList from './components/ProductList'
-import beanieIcon from './assets/beanieIcon.png'
 
 const App = () => {
   const [beanies, setBeanies] = useState([])
@@ -24,21 +23,21 @@ const App = () => {
     productService.getFacemasks().then(facemasks => {
       setFacemasks(facemasks)
     })
-  }, [])
+  }, []) 
 
-  let manufacturers = new Set()
+  // const manufacturers = new Set()
 
-  facemasks.forEach(beanie => manufacturers.add(beanie.manufacturer))
+  // beanies.forEach(beanie => manufacturers.add(beanie.manufacturer))
 
-  console.log(manufacturers)
+  // console.log(manufacturers)
 
-  const frontPageBeanies = beanies.slice(0,4)
-  const frontPageFacemasks = facemasks.slice(0,4)
-  const frontPageGloves = gloves.slice(0,4)
+  const frontPageBeanies = beanies.slice(0,100)
+  const frontPageFacemasks = facemasks.slice(0,100)
+  const frontPageGloves = gloves.slice(0,100)
 
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-        <ProductList products={frontPageBeanies} category={"Beanies"} icon={beanieIcon}/>
+        <ProductList products={frontPageBeanies} category={"Beanies"} />
         <ProductList products={frontPageFacemasks} category={"Facemasks"}/>
         <ProductList products={frontPageGloves} category={"Gloves"}/>
     </div>
