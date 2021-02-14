@@ -5,7 +5,6 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
-import Badge from '@material-ui/core/Badge'
 import manufacturerService from '../services/manufacturers'
 
 
@@ -66,8 +65,6 @@ const Availability = ({ availability }) => {
     if (!availability) {
         return null
     }
-    
-    console.log(availability)
 
     if (availability==="INSTOCK") {
         return (
@@ -78,9 +75,7 @@ const Availability = ({ availability }) => {
     } else if (availability==="LESSTHAN10") {
         return (
             <div>
-                <Badge badgeContent={10} color="error">
-                <Chip label="In Stock" />
-                </Badge>
+                <Chip label="<10 in Stock" variant="outlined" style={{color:'#ff8f00', borderColor:'#ffb300', borderWidth:'2px'}}/>
             </div>
         )
     } else if (availability==="OUTOFSTOCK") {

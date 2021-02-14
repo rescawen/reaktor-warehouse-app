@@ -25,12 +25,6 @@ const App = () => {
     })
   }, []) 
 
-  // const manufacturers = new Set()
-
-  // beanies.forEach(beanie => manufacturers.add(beanie.manufacturer))
-
-  // console.log(manufacturers)
-
   const frontPageBeanies = beanies.slice(0,4)
   const frontPageFacemasks = facemasks.slice(0,4)
   const frontPageGloves = gloves.slice(0,4)
