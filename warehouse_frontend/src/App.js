@@ -31,9 +31,9 @@ const App = () => {
 
   // console.log(manufacturers)
 
-  const frontPageBeanies = beanies.slice(0,100)
-  const frontPageFacemasks = facemasks.slice(0,100)
-  const frontPageGloves = gloves.slice(0,100)
+  const frontPageBeanies = beanies.slice(0,4)
+  const frontPageFacemasks = facemasks.slice(0,4)
+  const frontPageGloves = gloves.slice(0,4)
 
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
