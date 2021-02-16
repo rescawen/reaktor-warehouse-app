@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap',
         justifyContent: 'center',
         backgroundColor: '#fafafa',
+        margin: '25px'
     },
     gridList: {
         width: 300,
