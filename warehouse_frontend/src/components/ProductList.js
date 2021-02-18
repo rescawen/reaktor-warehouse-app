@@ -28,17 +28,18 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductList = (props) => {
     const classes = useStyles()
+
     return (
         <div className={classes.root}>
             <GridList cellHeight={250} className={classes.gridList} >
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
                     <h1 style={{ textAlign: 'center' }}>{props.category}</h1>
                     <div className={classes.header}>
-                    <Chip icon={<SearchIcon />} label="Search placeholder..." />
+                        <Chip icon={<SearchIcon />} label="Search placeholder..." />
                     </div>
                 </GridListTile>
                 {props.products.map((product) => (
-                    <ProductCard product={product} key={product.id} />
+                    <ProductCard product={product} key={product.id} allCategory={true} />
                 ))}
             </GridList>
         </div>

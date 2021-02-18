@@ -10,6 +10,8 @@ const App = () => {
   const [beanies, setBeanies] = useState([])
   const [gloves, setGloves] = useState([])
   const [facemasks, setFacemasks] = useState([])
+  
+  // console.log(beanies)
 
   useEffect(() => {
     productService.getBeanies().then(beanies => {
@@ -29,9 +31,9 @@ const App = () => {
     })
   }, [])
 
-  const frontPageBeanies = beanies.slice(0, 4)
-  const frontPageFacemasks = facemasks.slice(0, 4)
-  const frontPageGloves = gloves.slice(0, 4)
+  const frontPageBeanies = beanies.slice(0, 6)
+  const frontPageFacemasks = facemasks.slice(0, 6)
+  const frontPageGloves = gloves.slice(0, 6)
 
   return (
     <div>
@@ -39,17 +41,17 @@ const App = () => {
       <Switch>
         <Route path="/beanies">
           <CategoryPage
-            categoryProducts={frontPageBeanies}
+            products={frontPageBeanies}
             category={"Beanies"} />
         </Route>
         <Route path="/facemasks">
           <CategoryPage
-            categoryProducts={frontPageFacemasks}
+            products={frontPageFacemasks}
             category={"Facemasks"} />
         </Route>
         <Route path="/gloves">
           <CategoryPage
-            categoryProducts={frontPageGloves}
+            products={frontPageGloves}
             category={"Gloves"} />
         </Route>
         <Route path="/">
