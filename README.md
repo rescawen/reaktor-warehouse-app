@@ -2,7 +2,7 @@
 Assignment brief for junior developer job application summer 2021
 
 ### User Interface Logic: React 
-React is obviously a natural choice for this project. I have done multiple projects with it after taking the Fullstackopen course in 2018 and then retaking lately in 2020. I have also done an electron project using it. The group that I was part for the Software Engineering Project course which is one of the biggest one's for bachelor was also made with React. 
+React is obviously a natural choice for this project. I have done multiple projects with it after taking the [Full Stack Open](https://fullstackopen.com/en/about/) course in 2018 and then retaking lately in [2020](https://github.com/rescawen/Fall2020Fullstack). I have also done an [Electron project](https://github.com/rescawen/otm-harjoitustyo) using React. The group that I was part of for the Software Engineering Project course in summer of 2019 made one of the most successful project in its history in the form of a [Music Theory MOOC](https://github.com/rage/musiikin-teoria-material) with React.
 
 ### React component structure 
 
