@@ -112,6 +112,7 @@ const ProductCard = (props) => {
                     product={props.product}
                     showList={props.showList}
                     container={props.container}
+                    availability={availability}
                 />
             </div>
         </div>

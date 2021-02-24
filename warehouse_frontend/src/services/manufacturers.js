@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = '/'
+const baseUrl = 'https://reaktor-warehouse-rescawen.herokuapp.com'
 
 const getAvailablility = ( manufacturer, id) => {
     const request = axios.get(`${baseUrl}/${manufacturer}/${id}`)

@@ -3,6 +3,10 @@ import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
 import Portal from '@material-ui/core/Portal'
 import Paper from '@material-ui/core/Paper'
+import { makeStyles } from '@material-ui/core/styles'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import CardActions from '@material-ui/core/CardActions'
 
 const Circle = ({ color }) => {
 
@@ -64,7 +68,38 @@ const Availability = ({ availability }) => {
 
 }
 
+const useStyles = makeStyles((theme) => ({
+    left: {
+        width: 450
+    },
+    title: {
+        fontSize: 30,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+    footer: {
+        justifyContent: 'space-between',
+        '& > *': {
+            margin: theme.spacing(0.5),
+        },
+    },
+    circleContainer: {
+        display: 'flex',
+        justifyContent: 'left',
+        '& > *': {
+            margin: theme.spacing(0.5),
+        }
+    },
+    cardAction: {
+        display: 'block',
+        textAlign: 'initial'
+    }
+
+}))
+
 const ProductPortal = (props) => {
+    const classes = useStyles()
     let show = false
     props.showList.forEach(s => {
         if ((s[0] === props.product.id) && (s[1] === true)) {
@@ -76,11 +111,28 @@ const ProductPortal = (props) => {
         return (
             <div>
                 <Portal container={props.container}>
-                    <Paper>
-                        <Typography variant="h4">
-                            {props.product.name}
-                        </Typography>
-                    </Paper>
+                    <Card key={props.product.id}>
+                        <CardContent>
+                            <Typography className={classes.title} color="textSecondary" display="initial" gutterBottom>
+                                {props.product.id.toUpperCase()}
+                            </Typography>
+                            <Typography variant="h3" component="h2">
+                                Name: {props.product.name}
+                            </Typography>
+                            <Typography className={classes.pos} color="textSecondary">
+                                Manufacturer: {props.product.manufacturer}
+                            </Typography>
+                        </CardContent>
+                        <CardActions className={classes.footer}>
+                            <div className={classes.circleContainer}>
+                                {props.product.color.map((color) => (
+                                    <Circle color={color} key={color} />
+                                ))}
+                            </div>
+                            <Availability availability={props.availability} />
+                            <Chip label={props.product.price + ' €'} />
+                        </CardActions>
+                    </Card>
                 </Portal>
             </div>
         )

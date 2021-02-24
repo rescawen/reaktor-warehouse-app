@@ -1,34 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import productService from './services/products'
 import HomePage from './components/HomePage'
 import CategoryPage from './components/CategoryPage'
 import NavigationBar from './components/NavigationBar'
+import { useResource } from './hooks/resources'
 import { Switch, Route } from "react-router-dom"
 
 const App = () => {
-  const [beanies, setBeanies] = useState([])
-  const [gloves, setGloves] = useState([])
-  const [facemasks, setFacemasks] = useState([])
-  
+  const [beanies, beanieService] = useResource('/beanies')
+  const [gloves, gloveService] = useResource('/gloves')
+  const [facemasks, facemaskService] = useResource('/facemasks')
+
   // console.log(beanies)
+  // make these useEffects into functions that you pass to category page.
 
   useEffect(() => {
-    productService.getBeanies().then(beanies => {
-      setBeanies(beanies)
-    })
+    beanieService.getAll()
   }, [])
 
   useEffect(() => {
-    productService.getGloves().then(gloves => {
-      setGloves(gloves)
-    })
+    gloveService.getAll()
   }, [])
 
   useEffect(() => {
-    productService.getFacemasks().then(facemasks => {
-      setFacemasks(facemasks)
-    })
+    facemaskService.getAll()
   }, [])
 
   const frontPageBeanies = beanies.slice(0, 6)
