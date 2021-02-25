@@ -33,17 +33,17 @@ const App = () => {
     <div>
       <NavigationBar />
       <Switch>
-        <Route path="/beanies">
+        <Route path="/beanies-category">
           <CategoryPage
             products={frontPageBeanies}
             category={"Beanies"} />
         </Route>
-        <Route path="/facemasks">
+        <Route path="/facemasks-category">
           <CategoryPage
             products={frontPageFacemasks}
             category={"Facemasks"} />
         </Route>
-        <Route path="/gloves">
+        <Route path="/gloves-category">
           <CategoryPage
             products={frontPageGloves}
             category={"Gloves"} />

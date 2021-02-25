@@ -42,8 +42,6 @@ const CategoryPage = (props) => {
   console.log(props.category)
   console.log(props.products)
 
-  
-
   const selectProduct = (productId) => {
     const checkOnAndOff = tuple => {
       if (tuple[0] === productId) {

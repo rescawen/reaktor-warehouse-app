@@ -65,7 +65,7 @@ const NavigationBar = () => {
 
   const beanieButtonColor = () => {
     switch (location.pathname) {
-      case "/beanies":
+      case "/beanies-category":
         return "default"
       default:
         return "inherit"
@@ -74,7 +74,7 @@ const NavigationBar = () => {
 
   const facemaskButtonColor = () => {
     switch (location.pathname) {
-      case "/facemasks":
+      case "/facemasks-category":
         return "default"
       default:
         return "inherit"
@@ -83,7 +83,7 @@ const NavigationBar = () => {
 
   const gloveButtonColor = () => {
     switch (location.pathname) {
-      case "/gloves":
+      case "/gloves-category":
         return "default"
       default:
         return "inherit"
@@ -106,21 +106,21 @@ const NavigationBar = () => {
             color={beanieButtonColor()}
             className={classes.menuButton}
             startIcon={<BeanieIcon />}
-            component={Link} to="/beanies">
+            component={Link} to="/beanies-category">
             Beanies
               </Button>
           <Button
             color={facemaskButtonColor()}
             className={classes.menuButton}
             startIcon={<FacemaskIcon />}
-            component={Link} to="/facemasks">
+            component={Link} to="/facemasks-category">
             Facemasks
               </Button>
           <Button
             color={gloveButtonColor()}
             className={classes.menuButton}
             startIcon={<GloveIcon />}
-            component={Link} to="/gloves">
+            component={Link} to="/gloves-category">
             Gloves
               </Button>
         </Toolbar>
