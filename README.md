@@ -1,5 +1,8 @@
 # Reaktor Warehouse App
 Assignment brief for junior developer job application summer 2021
+## Links
+### [App live at Heroku](https://reaktor-warehouse-rescawen.herokuapp.com/)
+### Node Backend in a [separate repository](https://github.com/rescawen/warehouse-node-backend)
 
 ## Documentation 
 
@@ -24,7 +27,5 @@ The home page shows 3 Product Lists but on a mobile interface it would very simp
 ### Features not implemented due to time restraints
 Implementing pagination and filtering/search on material ui is quite difficult. This is why I chose to use placeholder search bar to give context to what the app would potentially look like if it went into production. The idea behind this was to show my application design philosophy and its potential. 
 
-## Node backend using json-server that will be deployed to Heroku at [separate repository](https://github.com/rescawen/warehouse-node-backend)  
-Uses fetch-json to get the JSON "database" files from bad-api. Actual server is done with json-server since the JSON files were already neatly formatted for one to create routing around them. 
+  
 
-[comment]: <> (EXPLAIN POTENTIAL SOLUTION TO DEALING WITH ERROR FOR MANUFACTURER EMPTY RESPONSES)
