@@ -25,7 +25,7 @@ Each row has two cards and cards can be selected to pop information enlarged ont
 
 ### Architecture (React component diagram)
 
-[comment]: <> (MAKE A GRAPHICAL SOLUTION FOR THE STRUCTURE)
+<img src="https://github.com/rescawen/reaktor-warehouse-app/blob/main/diagrams/React%20component%20architecture.png" alt="diagram" width="500"/>
 
 ### Features not implemented due to time restraints
 Implementing pagination and filtering/search on material ui is quite difficult. This is why I chose to use placeholder search bar to give context to what the app would potentially look like if it went into production. The idea behind this was to show my application design philosophy and its potential. 
