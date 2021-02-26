@@ -1,7 +1,6 @@
 # Reaktor Warehouse App
-Assignment brief for junior developer job application summer 2021
-## Links
-### [App live at Heroku](https://reaktor-warehouse-rescawen.herokuapp.com/)
+Assignment brief for junior developer job application summer 2021 
+### [App live at Heroku](https://reaktor-warehouse-rescawen.herokuapp.com/) 
 ### Node Backend in a [separate repository](https://github.com/rescawen/warehouse-node-backend)
 
 ## Documentation 
@@ -16,9 +15,13 @@ I wanted to reflect the style of design that Reaktor uses with my own personal t
 
 This is an antithesis to a spreadsheet design that is the gut reaction to what project like this might look like. Omitting all the descriptive titles like identifer code, name, manufacturer, price etc will cost the user a little bit of time in the beginning to get used to. Hopefully over time the lack of clutter will pay back in dividends. 
 
-#### Cateogry views
+#### All Cateogry view (home page)
 
 The home page shows 3 Product Lists but on a mobile interface it would very simple to just show one instead and the design would scale very well. 
+
+#### Category views for specific category
+
+Each row has two cards and cards can be selected to pop information enlarged onto a large modal on the left. 
 
 ### Architecture (React component diagram)
 
