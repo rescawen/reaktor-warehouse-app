@@ -10,9 +10,6 @@ const App = () => {
   const [gloves, gloveService] = useResource('/gloves')
   const [facemasks, facemaskService] = useResource('/facemasks')
 
-  // console.log(beanies)
-  // make these useEffects into functions that you pass to category page.
-
   useEffect(() => {
     beanieService.getAll()
   }, [])

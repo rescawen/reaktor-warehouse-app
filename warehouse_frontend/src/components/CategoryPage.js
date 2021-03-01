@@ -33,14 +33,12 @@ const useStyles = makeStyles((theme) => ({
 
 const CategoryPage = (props) => {
   const classes = useStyles()
-  const [showList, setShowList] = useState(props.products.map(p => [p.id, false]))
+  const [showList, setShowList] = useState([])
   const container = useRef(null)
-  
-  // when reloading or going from one category to another showlist is initializing before props.products or initializing wrong category
 
-  console.log(showList)
-  console.log(props.category)
-  console.log(props.products)
+  useEffect(() => {
+    setShowList(props.products.map(p => [p.id, false]))
+  },[props])
 
   const selectProduct = (productId) => {
     const checkOnAndOff = tuple => {
