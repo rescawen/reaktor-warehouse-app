@@ -89,8 +89,7 @@ const NavigationBar = () => {
         return "inherit"
     }
   }
-
-  // console.log(location.pathname)
+  
   return (
     <div>
       <AppBar position="static" style={{ backgroundColor: '#8d6e63' }}>

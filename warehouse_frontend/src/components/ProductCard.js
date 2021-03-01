@@ -6,7 +6,7 @@ import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
 import ButtonBase from '@material-ui/core/ButtonBase'
-import manufacturerService from '../services/manufacturers'
+import { useResource } from '../hooks/resources'
 import { Circle, Availability, ProductPortal } from './CardAssets'
 
 
@@ -42,15 +42,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const ProductCard = (props) => {
-    const [availability, setAvailability] = useState(null)
+    const [availability, availabilityService] = useResource()
     const classes = useStyles()
-
+    
     useEffect(() => {
-        manufacturerService.getAvailablility(props.product.manufacturer, props.product.id.toUpperCase()).then(a => {
-            const stockData = a.DATAPAYLOAD.split('\n')
-            const stock = stockData[2].split('\<')[1]
-            setAvailability(stock.split('\>')[1])
-        })
+        availabilityService.getAvailablility(props.product.manufacturer, props.product.id)
     }, [])
 
     if (props.allCategory) {

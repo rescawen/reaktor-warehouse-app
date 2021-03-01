@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import HomePage from './components/HomePage'
 import CategoryPage from './components/CategoryPage'
 import NavigationBar from './components/NavigationBar'
@@ -6,20 +6,20 @@ import { useResource } from './hooks/resources'
 import { Switch, Route } from "react-router-dom"
 
 const App = () => {
-  const [beanies, beanieService] = useResource('/beanies')
-  const [gloves, gloveService] = useResource('/gloves')
-  const [facemasks, facemaskService] = useResource('/facemasks')
+  const [beanies, beanieService] = useResource()
+  const [gloves, gloveService] = useResource()
+  const [facemasks, facemaskService] = useResource()
 
   useEffect(() => {
-    beanieService.getAll()
+    beanieService.getProducts('/beanies')
   }, [])
 
   useEffect(() => {
-    gloveService.getAll()
+    gloveService.getProducts('/gloves')
   }, [])
 
   useEffect(() => {
-    facemaskService.getAll()
+    facemaskService.getProducts('/facemasks')
   }, [])
 
   const frontPageBeanies = beanies.slice(0, 6)
@@ -53,7 +53,6 @@ const App = () => {
           />
         </Route>
       </Switch>
-
     </div>
   );
 }

@@ -4,7 +4,6 @@ import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import SearchIcon from '@material-ui/icons/Search'
 import Chip from '@material-ui/core/Chip';
-import Typography from '@material-ui/core/Typography'
 import ProductCard from './ProductCard'
 
 const useStyles = makeStyles((theme) => ({
