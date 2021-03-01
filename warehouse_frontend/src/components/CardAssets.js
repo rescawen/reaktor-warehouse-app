@@ -37,8 +37,6 @@ const Availability = ({ availability }) => {
         return null
     }
 
-    // console.log(availability)
-
     if (availability === "INSTOCK") {
         return (
             <div>
@@ -58,10 +56,10 @@ const Availability = ({ availability }) => {
             </div>
         )
     }
-    // add 4rth option for information is not available, below solution adding that default does not work
+
     return (
         <div>
-            <Chip label="Stock Status Unknown" variant="outlined" color="secondary" style={{ borderWidth: '2px' }} />
+            <Chip label="Status Unknown" variant="outlined" color="secondary" style={{ borderWidth: '2px' }} />
         </div>
     )
 
