@@ -7,7 +7,8 @@ import Typography from '@material-ui/core/Typography'
 import Chip from '@material-ui/core/Chip'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import { useResource } from '../hooks/resources'
-import { Circle, Availability, ProductPortal } from './CardAssets'
+import ProductPortal from './ProductPortal'
+import { Circle, Availability } from './CardAssets'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 const ProductCard = (props) => {
     const [availability, availabilityService] = useResource()
     const classes = useStyles()
-    
+
     useEffect(() => {
         availabilityService.getAvailablility(props.product.manufacturer, props.product.id)
     }, [])

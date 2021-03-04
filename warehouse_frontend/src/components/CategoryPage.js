@@ -15,18 +15,19 @@ const useStyles = makeStyles((theme) => ({
     margin: '25px'
   },
   popOut: {
-    width: 500,
-    height: 700,
-    margin: '25px'
+    margin: '50px',
+    width: 650
   },
   gridList: {
-    width: 600,
-    height: 700,
+    width: 650,
+    display: 'flex',
+    justifyContent: 'center'
   },
   header: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: '10px'
   }
 }))
 
